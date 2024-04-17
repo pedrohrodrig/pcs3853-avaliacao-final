@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { professional } from "./objects/profile";
 import { NotificationContainer } from "react-notifications";
-import UserContext from "./contexts/UserContext";
+
+import BuyTicketPage from "./pages/BuyTicket/BuyTicketPage"
 
 import "react-notifications/lib/notifications.css"
 import "./App.css";
@@ -12,7 +12,9 @@ function App() {
     return (
         <BrowserRouter>
           <Routes>
-            
+            <Route path="/" >
+              <Route index element={<BuyTicketPage />} />
+            </Route>
           </Routes>
         </BrowserRouter>
     );

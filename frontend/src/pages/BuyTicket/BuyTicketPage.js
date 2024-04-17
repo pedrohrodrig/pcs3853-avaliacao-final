@@ -1,25 +1,61 @@
-import { React, useState } from "react";
+import { React, useState, useEffect } from "react";
 import { Button, ToggleButton, ToggleButtonGroup  } from "react-bootstrap";
 
-import Title from "../../../components/title/title";
+import Title from "../../components/title/title";
 
-import './LoginPage.css'
+import axios from "axios";
+
+import urls from "../../utils/urls"
+
+import './BuyTicketPage.css'
+
+const seatsMock = [
+  {name: "A1", status: "F"},
+  {name: "A2", status: "F"},
+  {name: "A3", status: "F"},
+  {name: "A4", status: "F"},
+  {name: "A5", status: "F"},
+  {name: "A6", status: "F"},
+]
 
 function BuyTicketPage() {
-    const [freeSeats, setFreeSeats] = useState([])
-    const [reservedSeats, setReservedSeats] = useState([])
-    const [unavailableSeats, setUnavailableSeats] = useState([])
+    const [seats, setSeats] = useState([])
+
+    useEffect(() => {
+      axios.get(`${urls.seatMapServiceURL}`)
+      .then((response) => {
+        setSeats(response.data);
+      })
+      .catch((errors) => {
+        console.log(errors);
+      })
+    })
 
     return (
       <>
         <div className="buy-ticket page" >
           <Title head="Comprar ingressos" />
-          <ToggleButtonGroup type="checkbox" defaultValue={[1, 3]} className="mb-2">
-            {Array.from({length: 3}, (_, index) => {
-              <ToggleButton id={`seat-a${index}`} value={1}>
-                {`A${index}`}
-              </ToggleButton>;
-            })}
+          <div className="seat-container">
+            {seatsMock.map((seat, index) => 
+              <ToggleButton 
+                id={`seat-${seat.name}`} 
+                name={seat.name}
+                value={index} 
+                checked={true}
+                className="seat"
+              >
+                {`${seat.name}`}
+              </ToggleButton>
+          )}
+          </div>
+
+          
+          {/* <ToggleButtonGroup type="checkbox" defaultValue={[1, 3]} className="mb-2">
+            {seatsMock.map((seat, index) => 
+              <ToggleButton id={`seat-${seat.name}`} value={index}>
+                {`${seat.name}`}
+              </ToggleButton>
+            )}
           </ToggleButtonGroup>
           <ToggleButtonGroup type="checkbox" defaultValue={[1, 3]} className="mb-2">
             {Array.from({length: 3}, (_, index) => {
@@ -34,7 +70,7 @@ function BuyTicketPage() {
                 {`C${index}`}
               </ToggleButton>;
             })}
-          </ToggleButtonGroup>
+          </ToggleButtonGroup> */}
           <div className="d-grid gap-2">
           <Button variant="success" size="lg">
             Confirmar

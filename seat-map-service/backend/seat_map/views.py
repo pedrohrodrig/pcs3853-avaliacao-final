@@ -17,3 +17,13 @@ class SeatView(ModelViewSet):
         serializer = SeatSerializer(seats, many=True)
 
         return Response(serializer.data, status=status.HTTP_200_OK)
+    
+    def update_seats(self, request):
+        serializer = SeatSerializer(data=request.data, many=True)
+        if not serializer.is_valid():
+            return Response(status=status.HTTP_400_BAD_REQUEST)
+        
+        for seat in serializer.validated_data:
+            Seat.objects.filter(name=seat.name).update(status=seat.status)
+
+        return Response(status=status.HTTP_202_ACCEPTED)

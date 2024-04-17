@@ -1,0 +1,152 @@
+.hcard {
+    height: 80px;
+    width: stretch;
+    display: flex;
+    background-color: var(--white);
+    align-items: stretch;
+    border-radius: 20px;
+    box-shadow: 4px 4px 30px var(--shadow);
+    text-decoration: none;
+    color: var(--black);
+    gap: 20px;
+    overflow: hidden;
+}
+
+.hcard .image {
+    height: 80px;
+    width: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hcard img {
+    height: 80px;
+    width: 80px;
+}
+
+.hcard .icon-div {
+    height: 80px;
+    width: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hcard .icon-div .icon {
+    padding: 15px;
+    border: 1px solid var(--black);
+    border-radius: 50%;
+    color: var(--black);
+}
+
+.hcard .card-content {
+    width: calc(100% - 120px);
+    height: 100%;
+    display: flex;
+    box-sizing: border-box;
+    justify-content: space-between;
+    padding: 20px 0;
+    gap: 7px;
+}
+
+.hcard .card-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hcard .text {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.hcard .title {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.hcard .body {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 150%;
+    margin: 0;
+}
+
+.hcard .iconbox {
+    display: none;
+}
+
+.hcard.clickable .card-content {
+    padding-right: 0;
+}
+
+.hcard.clickable .iconbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.hcard.clickable .iconbox .icon {
+    color: var(--dark-gray);
+}
+
+.disabled-link {
+    pointer-events: none;
+}
+
+.hcard.small {
+    align-items: center;
+    height: fit-content;
+    background-color: transparent;
+    box-shadow: none;
+    gap: 10px;
+}
+
+.hcard.small .image {
+    height: 30px;
+    width: 30px;
+}
+
+.hcard.small img {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+}
+
+.hcard.small .icon-div {
+    height: 30px;
+    width: 30px;
+}
+
+.hcard .icon-div .icon {
+    padding: 7px;
+}
+
+.hcard.small .hcard-icon a {
+    height: 30px !important;
+    width: 30px !important;
+}
+
+.hcard.small .hcard-icon svg {
+    height: 12px !important;
+    width: 12px !important;
+}
+
+.hcard.small .card-content {
+    height: stretch;
+    width: fit-content;
+    padding: 0;
+}
+
+.hcard.small .title {
+    font-size: 14px;
+    text-decoration: underline !important;
+}
+
+.hcard.clickable.small .iconbox {
+    display: none;
+}

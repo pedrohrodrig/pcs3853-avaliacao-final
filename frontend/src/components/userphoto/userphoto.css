@@ -1,0 +1,36 @@
+.user a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    gap: 15px;
+}
+
+.user img {
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+    border: 3px solid var(--black);
+}
+
+.user h1 {
+    color: var(--black);
+    font-size: 24px;
+    font-weight: 600;
+    margin: 0;
+    display: none;
+}
+
+.user.name h1 {
+    display: block;
+}
+
+.user.grad img {
+    border: 3px solid transparent;
+    background: var(--background) padding-box, var(--gradient-full) border-box;
+}
+
+.disabled-link {
+    pointer-events: none;
+}

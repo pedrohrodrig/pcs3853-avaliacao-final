@@ -1,0 +1,120 @@
+/* Generic Button style specification */
+.but {
+    height: fit-content;
+    width: fit-content;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.but .but-link {
+    text-decoration: none;
+    padding: 20px 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* Right icon Button style specification */
+.but.right .but-link {
+    flex-direction: row-reverse;
+}
+
+/* No icon Button style specification */
+.but.text .icon {
+    display: none;
+}
+
+/* Medium Button style specification */
+.but.medium {
+    border-radius: 10px;
+    font-size: 18px;
+}
+
+.but.medium .but-link {
+    padding: 15px 22px;
+    gap: 8px;
+}
+
+.but.medium .icon {
+    scale: 0.9;
+}
+
+/* Small Button style specification */
+.but.small {
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.but.small .but-link {
+    padding: 10px 15px;
+    gap: 4px;
+}
+
+.but.small .icon {
+    scale: 0.8;
+}
+
+/* Very small Button style specification */
+.but.very-small {
+    border-radius: 7px;
+    font-size: 14px;
+}
+
+.but.very-small .but-link {
+    padding: 8px 16px;
+    gap: 3px;
+}
+
+.but.very-small .icon {
+    scale: 0.7;
+}
+
+/* Gradient Button style specification */
+.but.grad {
+    border: 3px solid transparent;
+    background: var(--gradient-full) padding-box, var(--gradient-full) border-box;
+}
+
+.but.grad .but-link {
+    color: var(--black);
+}
+
+/* Black Button style specification */
+.but.black {
+    background: var(--black);
+    border: 3px solid var(--black);
+}
+
+.but.black .but-link {
+    color: var(--white)
+}
+
+/* Outline gradient Button style specification */
+.but.outline.grad {
+    border: 3px solid transparent;
+    background: var(--background) padding-box, var(--gradient-full) border-box;
+}
+
+.but.outline.grad .but-link {
+    background: var(--gradient-full);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Outline black Button style specification */
+.but.outline.black {
+    border: 3px solid var(--black);
+    background: transparent;
+}
+
+.but.outline.black .but-link {
+    color: var(--black);
+}

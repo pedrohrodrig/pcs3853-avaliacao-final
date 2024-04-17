@@ -1,0 +1,33 @@
+.textinput {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+
+.textinput.horizontal {
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+}
+
+.textinput h1 {
+    font-size: 14px;
+    padding-left: 0.5rem;
+}
+
+.textinput input {
+    font-size: 14px;
+    padding: 0px 10px;
+    height: 35px;
+    width: 100%;
+    font-family: "Karla", sans-serif;
+    border-radius: 10px;
+    border: 2px solid var(--black);
+    background: var(--light-gray);
+}
+
+.textinput input:hover {
+    border: 2px solid var(--dark-gray);
+    transition: border .1s ease-in,
+}

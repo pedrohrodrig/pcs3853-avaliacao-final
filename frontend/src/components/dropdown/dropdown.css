@@ -1,0 +1,13 @@
+.react-select .react-select__control {
+    display: flex;
+    font-family: "Karla", sans-serif;
+    font-size: smaller;
+    text-emphasis-color: var(--light-gray);
+    border-radius: 10px;
+    width: fit-content;
+    gap: 4px;
+    flex: 1 0 0;
+    border: 2px solid var(--black);
+    background: var(--light-gray);
+    box-shadow: 4px 4px 30px 0px var(--Drop-Shadow, #CBD2E0);
+}

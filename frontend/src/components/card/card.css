@@ -1,0 +1,84 @@
+.card {
+    height: 300px;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--white);
+    align-items: stretch;
+    border-radius: 20px;
+    box-shadow: 4px 4px 30px var(--shadow);
+    overflow: hidden;
+    gap: 10px;
+    text-decoration: none;
+    color: var(--black);
+}
+
+.card .image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--gradient-trans);
+    height: stretch;
+}
+
+.card .card-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px 20px;
+    gap: 7px;
+}
+
+.card .text {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.card .title {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.card .body {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 150%;
+    margin: 0;
+}
+
+.card .buttons {
+    display: flex;
+    margin: 5px 0;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.card .logo {
+    width: 60px;
+    height: 20px;
+}
+
+.card .iconbox {
+    display: none;
+}
+
+.card.clickable .card-content {
+    padding-right: 0;
+}
+
+.card.clickable .buttons {
+    display: none;
+}
+
+.card.clickable .iconbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.card.clickable .icon {
+    color: var(--dark-gray);
+}

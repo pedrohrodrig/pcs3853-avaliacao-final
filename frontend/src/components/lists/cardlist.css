@@ -1,0 +1,50 @@
+.card-list {
+  overflow-y: scroll;
+  padding: 30px;
+}
+
+.card-list::-webkit-scrollbar {
+  display: none;
+}
+
+.card-list {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.card-list .hcard {
+  margin-bottom: 20px;
+}
+
+.small-card-list {
+  overflow-y: scroll;
+  padding: 15px;
+  border-radius: 10px;
+  background-color: var(--white);
+  box-shadow: 4px 4px 30px var(--shadow);
+}
+
+.small-card-list::-webkit-scrollbar {
+  display: none;
+}
+
+.small-card-list {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.small-card-list .hcard {
+  margin-bottom: 5px;
+  gap: 5px;
+  box-shadow: none;
+}
+
+.small-card-list .hcard .image img {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+}
+
+.small-card-list .hcard .card-content {
+  width: calc(100% - 80px);
+}

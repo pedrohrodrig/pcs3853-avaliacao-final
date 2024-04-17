@@ -1,0 +1,16 @@
+.appointment-list {
+    overflow: scroll;
+}
+
+.appointment-list::-webkit-scrollbar {
+    display: none;
+}
+
+.appointment-list {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.appointment-list .card {
+    margin-bottom: 30px;
+}

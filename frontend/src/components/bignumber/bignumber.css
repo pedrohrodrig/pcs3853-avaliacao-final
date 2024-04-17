@@ -1,0 +1,43 @@
+a.bignumber {
+    text-decoration: none;
+    color: var(--black);
+}
+
+.bignumber {
+    width: 175px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: var(--gradient-trans);
+    border-radius: 10px;
+    padding: 20px 20px;
+    box-shadow: 4px 4px 30px var(--shadow);
+}
+
+.bignumber .circle-icon {
+    height: 20px;
+    width: 20px;
+    padding: 15px;
+    border: 1px solid var(--black);
+    border-radius: 50%;
+}
+
+.bignumber .number {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.bignumber .number h1 {
+    font-size: 24px;
+    line-height: 100%;
+}
+
+.bignumber .number p {
+    font-size: 15px;
+    line-height: 100%;
+}
+
+.disabled-link {
+    pointer-events: none;
+}

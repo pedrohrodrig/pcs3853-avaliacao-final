@@ -1,0 +1,14 @@
+.page-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.page-title p {
+    display: none;
+}
+
+.page-title.body p {
+    display: block;
+}

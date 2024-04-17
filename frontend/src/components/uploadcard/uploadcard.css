@@ -1,0 +1,8 @@
+.file-input-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.file-input-container .input-field {
+    margin-right: 2rem;
+}

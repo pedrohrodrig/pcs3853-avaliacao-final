@@ -1,5 +1,5 @@
 import { React, useState, useEffect } from "react";
-import { Button, ToggleButton, ToggleButtonGroup  } from "react-bootstrap";
+import { Container, Button, ToggleButton, Row, Col  } from "react-bootstrap";
 
 import Title from "../../components/title/title";
 
@@ -9,45 +9,44 @@ import urls from "../../utils/urls"
 
 import './BuyTicketPage.css'
 
-const seatsMock = [
-  {name: "A1", status: "F"},
-  {name: "A2", status: "F"},
-  {name: "A3", status: "F"},
-  {name: "A4", status: "F"},
-  {name: "A5", status: "F"},
-  {name: "A6", status: "F"},
-]
-
 function BuyTicketPage() {
     const [seats, setSeats] = useState([])
 
     useEffect(() => {
-      axios.get(`${urls.seatMapServiceURL}`)
+      axios.get(`${urls.seatMapServiceURL}/seat/`)
       .then((response) => {
+        console.log(response)
         setSeats(response.data);
       })
       .catch((errors) => {
         console.log(errors);
       })
-    })
+    }, [])
 
     return (
       <>
         <div className="buy-ticket page" >
-          <Title head="Comprar ingressos" />
-          <div className="seat-container">
-            {seatsMock.map((seat, index) => 
-              <ToggleButton 
-                id={`seat-${seat.name}`} 
-                name={seat.name}
-                value={index} 
-                checked={true}
-                className="seat"
-              >
-                {`${seat.name}`}
-              </ToggleButton>
-          )}
-          </div>
+          <Container>
+            <Row>
+              <Title head="Comprar ingressos" class="title" />
+            </Row>
+            <Row className="seat-container">
+              {seats.map((seat, index) => 
+                <Col>
+                  <ToggleButton 
+                    id={`seat-${seat.name}`} 
+                    name={seat.name}
+                    value={index} 
+                    checked={true}
+                    className="seat"
+                  >
+                    {`${seat.name}`}
+                  </ToggleButton>
+                </Col>
+            )}
+            </Row>
+          </Container>
+          
 
           
           {/* <ToggleButtonGroup type="checkbox" defaultValue={[1, 3]} className="mb-2">

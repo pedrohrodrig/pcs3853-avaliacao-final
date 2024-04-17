@@ -3,3 +3,11 @@
     flex-direction: row;
     justify-content: space-between;
 }
+
+.seat {
+    margin: 0 10px;
+}
+
+.title {
+    align-self: center;
+}
